@@ -19,7 +19,12 @@ namespace Agl.CodeTest.Dal
             var request = new RestRequest();
 
             var response = client.Get(request);
-            
+            //VB:
+            //RestSharp doesn't work with Newtonsoft.Json anymore 
+            //their deserializer doesn support deserializing enums from strings, only from values
+            //therefore I'm using Newtonsoft.Json here
+            //that sort of weird because without that RestSharp doesn't do much
+            //but still it's cleaner than HttpClient
             var result = JsonConvert.DeserializeObject<List<Person>>(response.Content);
 
             return result;
