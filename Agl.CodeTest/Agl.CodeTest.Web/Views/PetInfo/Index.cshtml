@@ -1,0 +1,30 @@
+﻿@model Agl.CodeTest.Web.Models.PetInfoByGenderModel
+
+@{
+    ViewBag.Title = "Pet info by gender";
+    Layout = "../MainLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h1>Pet info by gender</h1>
+                <h2>Male</h2>
+                <ul class="list-group">
+                    @foreach (var name in Model.Male.Names)
+                    {
+                        <li class="list-group-item">@name</li>
+                    }
+                </ul>
+                <h2>Female</h2>
+                <ul class="list-group">
+                    @foreach (var name in Model.Female.Names)
+                    {
+                        <li class="list-group-item">@name</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
